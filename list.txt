@@ -17,3 +17,4 @@ catch-caught-caught
 feel-felt-felt
 fight-fought-fought
 find-found-found
+forget-forgot-forgot/forgotten
