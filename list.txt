@@ -18,3 +18,14 @@ feel-felt-felt
 fight-fought-fought
 find-found-found
 forget-forgot-forgot/forgotten
+get-got-got/gotten
+
+sit-sat-sat
+sleep-slept-slept
+spend-spent-spent
+stand-stood-stood
+teach-taught-taught
+tell-told-told
+think-thought-thought
+understand-understood-understood
+win-won-won
