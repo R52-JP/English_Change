@@ -45,9 +45,9 @@
       }
       console.log(word_list)
     });
-    a = 0
+    var a = 0
     function next_word() {
-      var a = Math.floor( Math.random() * word_list.length ) ;
+      a = Math.floor( Math.random() * word_list.length ) ;
       document.getElementById("now").innerText = word_list[a][0];
     }
     
