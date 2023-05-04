@@ -54,10 +54,11 @@
     next_word()
     
     function correct_check() {
-      if (document.getElementById("c1").value == word_list[a][1]) {
-        if (document.getElementById("c2").value == word_list[a][2]) {
-          alert("正解！")
-      　}
+      if (document.getElementById("c1").value == word_list[a][1] && document.getElementById("c2").value == word_list[a][2]) {
+        alert("正解！")
+      }
+      else {
+        alert("残念...")
       }
     }
   </script>
