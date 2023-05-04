@@ -35,9 +35,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script language="javascript" type="text/javascript">
     url = "list.txt";
+    text = ""
     $.get(url, (data) => {
-      console.log(data)
+      text = data
+      console.log(text)
     });
+    word_list = text.split("\n")
+    for ( let i = 0; i < word_list.length; i++ ) {
+        word_list[i] = message_list[i].split("-");
+        word_list[i][1] = word_list[i][1].split("/")
+        word_list[i][2] = word_list[i][2].split("/")
+    }
+    console.log(word_list)
   </script>
   <h1>英語の活用形</h1>
   <table border="1" style="border-collapse: collapse">
