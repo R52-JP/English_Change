@@ -37,9 +37,8 @@
     url = "list.txt";
     text = ""
     $.get(url, (data) => {
-      text = data
-      console.log(text)
-      word_list = text.split("\n")
+      console.log(data)
+      word_list = data.split("\n")
       for ( let i = 0; i < word_list.length; i++ ) {
           word_list[i] = word_list[i].split("-");
           word_list[i][1] = word_list[i][1].split("/")
