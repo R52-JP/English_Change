@@ -14,10 +14,31 @@
         font-size: 25px;
         text-align: center;
     }
+    .button1 {
+      text-align: center;
+    }
+    button {
+      font-family: "Hiragino Maru Gothic ProN W4";
+      font-size: 25px;
+    }
+    input {
+      font-family: "Hiragino Maru Gothic ProN W4";
+      font-size: 25px;
+      width: 90%;
+    }
+    input::placeholder {
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
-  <script></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript">
+    url = "list.txt";
+    $.get(url, (data) => {
+      console.log(data)
+    });
+  </script>
   <h1>英語の活用形</h1>
   <table border="1" style="border-collapse: collapse">
   <tr>
@@ -27,9 +48,13 @@
   </tr>
   <tr>
     <td>have</td>
-    <td>had</td>
-    <td>had</td>
+    <td><input type="text" placeholder="入力してください..."></td>
+    <td><input type="text" placeholder="入力してください..."></td>
   </tr>
-</table>
+  </table>
+  <p></p>
+  <div class="button1">
+  <button>Next Word</button><a>　　　　</a><button>正誤判定</button>
+  </div>
 </body>
 </html>
