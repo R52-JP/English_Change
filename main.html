@@ -61,7 +61,20 @@
     next_word()
     
     function correct_check() {
-      if (document.getElementById("c1").value == word_list[a][1] && document.getElementById("c2").value == word_list[a][2]) {
+      if (word_list[a][1].indexOf('/') !== -1) {
+        var check1 = (document.getElementById("c1").value == word_list[a][1].split("/")[0] || document.getElementById("c1").value == word_list[a][1].split("/")[1])
+      }
+      else {
+        var check1 = (document.getElementById("c1").value == word_list[a][1])
+      }
+      
+      if (word_list[a][2].indexOf('/') !== -1) {
+        var check2 = (document.getElementById("c2").value == word_list[a][2].split("/")[0] || document.getElementById("c2").value == word_list[a][1].split("/")[2])
+      }
+      else {
+        ver check2 = document.getElementById("c2").value == word_list[a][2]
+      }
+      if (check1 && check2) {
         document.getElementById("tf").innerText = "正解!";
       }
       else {
@@ -88,7 +101,7 @@
   <p id="tf" class="tf"></p>
   <p id="credit">（注意）[Next Word]ボタンを押してから始めてください。</p>
   <p id="credit">製作・・・[データベース]Tomato.   [プログラム]R. Fukue</p>
-  </div>
+  </div>:
 </body>
 </html>
 
