@@ -118,6 +118,7 @@
 	return Object.values(obj);
 }
     function reset() {
+	    document.getElementById("reset").innerText = "リセット（はじめから）";
       word_list = shuffle(word_list)
       a = -1
       document.getElementById("b1").disabled = false;
@@ -140,7 +141,7 @@
   </table>
   <p></p>
   <div class="button1">
-  <button onclick="reset()">スタート</button><a>　　　　</a><button onclick="next_word()" id="b1" disabled>Next Word</button><a>　　　　</a><button onclick="correct_check()" id="b2" disabled>正誤判定</button>
+  <button onclick="reset()" id="reset">スタート</button><a>　　　　</a><button onclick="next_word()" id="b1" disabled>Next Word</button><a>　　　　</a><button onclick="correct_check()" id="b2" disabled>正誤判定</button>
 	  <p id="tf" class="tf"></p>
 	  <p class="tf" id="count"></p>
   <p class="tf">（注意）［Next Word］ボタンを押してから始めてください。</p>
