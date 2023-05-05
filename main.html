@@ -55,7 +55,7 @@
     });
     var a = 0
     function next_word() {
-      a = Math.floor( Math.random() * word_list.length ) ;
+      a = a + 1
       document.getElementById("now").innerText = word_list[a][0];
       document.getElementById("tf").innerText = "";
       document.getElementById("c1").value = "";
@@ -88,6 +88,12 @@
         document.getElementById("tf").innerText = "残念!";
       }
     }
+    function reset() {
+      shufful(word_list)
+      a = 0
+      document.getElementById("b1").disabled = null;
+      document.getElementById("b2").disabled = null;
+    }
   </script>
   <h1>英語の活用形</h1>
   <table border="1" style="border-collapse: collapse">
@@ -104,7 +110,7 @@
   </table>
   <p></p>
   <div class="button1">
-  <button onclick="next_word()">Next Word</button><a>　　　　</a><button onclick="correct_check()">正誤判定</button>
+  <button>スタート</button><a>　　　　</a><button onclick="next_word()" id="b1" disabled>Next Word</button><a>　　　　</a><button onclick="next_word()" id="b2" disabled>Next Word</button><a>　　　　</a><button onclick="next_word()">Next Word</button><a>　　　　</a><button onclick="correct_check()">正誤判定</button>
   <p id="tf" class="tf"></p>
   <p class="tf">（注意）［Next Word］ボタンを押してから始めてください。</p>
   <p class="credit">製作・・・［データベース］Tomato.   ［プログラム］R. Fukue</p>
