@@ -55,12 +55,13 @@
     });
     var a = 0
     function next_word() {
+	    a=a+1
 	    document.getElementById("b1").disabled = true;
       document.getElementById("now").innerText = word_list[a][0];
       document.getElementById("tf").innerText = "";
       document.getElementById("c1").value = "";
       document.getElementById("c2").value = "";
-      a=a+1
+      
     }
     
     next_word()
@@ -117,7 +118,7 @@
 }
     function reset() {
       word_list = shuffle(word_list)
-      a = 0
+      a = -1
       document.getElementById("b1").disabled = false;
       document.getElementById("b2").disabled = false;
       next_word()
