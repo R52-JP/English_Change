@@ -88,6 +88,30 @@
         document.getElementById("tf").innerText = "残念!";
       }
     }
+    function shuffle(array) {
+	// 空のオブジェクトを作成する
+	let obj = {};
+
+	// 受け取った配列を繰り返す
+	for (let i = 0; i < array.length; i++) {
+
+		// ランダムな数値を生成する ※配列の数より少ないと永久ループする
+		let rand = Math.floor(Math.random() * 10000000);
+
+		// 同じキー名がないか判別する
+		if (!obj[rand]) {
+			// 同じキー名がない場合にobjに追加する
+			obj[rand] = array[i];
+		} else {
+			// 同じキー名ある場合、やり直す
+			i--;
+		}
+
+	}
+
+	// 作成したオブジェクトの値から配列を作成して返す
+	return Object.values(obj);
+}
     function reset() {
       shufful(word_list)
       a = 0
