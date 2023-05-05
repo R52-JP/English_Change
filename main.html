@@ -55,11 +55,11 @@
     });
     var a = 0
     function next_word() {
-      a = a + 1
       document.getElementById("now").innerText = word_list[a][0];
       document.getElementById("tf").innerText = "";
       document.getElementById("c1").value = "";
       document.getElementById("c2").value = "";
+      a=a+1
     }
     
     next_word()
@@ -68,6 +68,7 @@
     var check2 = ""
     
     function correct_check() {
+      document.getElementById("b1").disabled = true;
       if (word_list[a][1].indexOf('/') !== -1) {
         check1 = (document.getElementById("c1").value == word_list[a][1].split("/")[0] || document.getElementById("c1").value == word_list[a][1].split("/")[1])
       }
@@ -83,6 +84,7 @@
       }
       if (check1 && check2) {
         document.getElementById("tf").innerText = "正解!";
+	      document.getElementById("b1").disabled = false;
       }
       else {
         document.getElementById("tf").innerText = "残念!";
@@ -117,6 +119,7 @@
       a = 0
       document.getElementById("b1").disabled = false;
       document.getElementById("b2").disabled = false;
+      next_word()
     }
   </script>
   <h1>英語の活用形</h1>
@@ -135,7 +138,8 @@
   <p></p>
   <div class="button1">
   <button onclick="reset()">スタート</button><a>　　　　</a><button onclick="next_word()" id="b1" disabled>Next Word</button><a>　　　　</a><button onclick="correct_check()" id="b2" disabled>正誤判定</button>
-  <p id="tf" class="tf"></p>
+	  <p id="tf" class="tf"></p>
+	  <p class="tf" id="count"></p>
   <p class="tf">（注意）［Next Word］ボタンを押してから始めてください。</p>
   <p class="credit">製作・・・［データベース］Tomato.   ［プログラム］R. Fukue</p>
   </div>
