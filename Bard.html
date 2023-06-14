@@ -1,34 +1,57 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>English Conjugation Checker</title>
+<title>Verb Quiz</title>
 </head>
 <body>
-  <input type="text" id="word" />
-  <button type="button" onclick="check()">Check</button>
-  <div id="result"></div>
-</body>
+<h1>Verb Quiz</h1>
+<p>
+The present form of the verb is:
+</p>
+<input type="text" name="present" />
+<p>
+Please enter the past form and past participle of the verb:
+</p>
+<input type="text" name="past" />
+<input type="text" name="past_participle" />
+<input type="button" value="Check!" onclick="checkAnswer()" />
 <script>
-function check() {
-  var word = document.getElementById("word").value;
-  var conjugations = {
-    "eat": ["eat", "ate", "eaten"],
-    "drink": ["drink", "drank", "drunk"],
-    "walk": ["walk", "walked", "walked"],
-    "run": ["run", "ran", "run"],
-    "jump": ["jump", "jumped", "jumped"],
-    "sit": ["sit", "sat", "sat"],
-    "stand": ["stand", "stood", "stood"],
-    "lie": ["lie", "lay", "lain"],
-    "come": ["come", "came", "come"],
-    "go": ["go", "went", "gone"],
-  };
-  var result = conjugations[word];
-  if (result) {
-    document.getElementById("result").innerHTML = result.join(" ");
-  } else {
-    document.getElementById("result").innerHTML = "Invalid word";
+function checkAnswer() {
+  var present = document.getElementById("present").value;
+  var past = document.getElementById("past").value;
+  var past_participle = document.getElementById("past_participle").value;
+
+  // Check the past form.
+  if (past !== pastForm(present)) {
+    alert("The past form is incorrect.");
+    return;
   }
+
+  // Check the past participle.
+  if (past_participle !== pastParticiple(present)) {
+    alert("The past participle is incorrect.");
+    return;
+  }
+
+  // The answer is correct!
+  alert("Correct!");
+}
+
+function pastForm(verb) {
+  var pastForm = verb.replace(/s$/, "");
+  return pastForm + "ed";
+}
+
+function pastParticiple(verb) {
+  var pastParticiple = pastForm(verb) + "en";
+  if (verb === "be") {
+    return "been";
+  } else if (verb === "have") {
+    return "had";
+  } else if (verb === "do") {
+    return "done";
+  }
+  return pastParticiple;
 }
 </script>
+</body>
 </html>
